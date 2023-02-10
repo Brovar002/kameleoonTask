@@ -3,10 +3,10 @@ package by.goncharov.kameleoonTask.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "accounts")
+@Table(name = "users")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -17,19 +17,17 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "login")
-    private String login;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
+    @Column(name = "password", nullable = false)
+    private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Quote> quoteList;
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 }

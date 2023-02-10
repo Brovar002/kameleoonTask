@@ -1,14 +1,9 @@
 package by.goncharov.kameleoonTask.entity;
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "quotes")
@@ -19,24 +14,23 @@ import java.util.Set;
 @ToString
 @EqualsAndHashCode
 public class Quote {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "content", nullable = false)
     private String content;
 
-    @ManyToOne
-    private User user;
-
-    @CreationTimestamp
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "quote")
-    private List<Vote> votes;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 
+    @Column(nullable = false)
+    private int votes;
 }
