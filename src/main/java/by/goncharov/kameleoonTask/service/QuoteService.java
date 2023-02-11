@@ -16,8 +16,7 @@ public interface QuoteService {
     Quote getRandomQuote();
     Quote updateQuote(Long id, QuoteDTO quoteDTO);
     void deleteQuote(Long id);
-    Vote upvoteQuote(Long quoteId, User user);
-    Vote downvoteQuote(Long quoteId, User user);
+    Quote downvoteQuote(Long id, VoteDTO voteDTO);
     
     Quote getQuoteById(Long id);
 

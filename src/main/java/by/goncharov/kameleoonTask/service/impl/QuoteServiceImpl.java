@@ -79,48 +79,11 @@ public class QuoteServiceImpl implements QuoteService {
         return quoteRepository.save(quote);
     }
 
-    @Override
-    public Vote upvoteQuote(Long quoteId, User user) {
-        Quote quote = quoteRepository.findById(quoteId).orElseThrow(() -> new ResourceNotFoundException("Quote not found with id " + quoteId));
-        Vote vote = voteRepository.findByQuoteAndUser(quote, user);
-        if (vote != null) {
-            if (vote.getVoteType().equals(VoteType.UPVOTE)) {
-                throw new BadRequestException("You have already upvoted this quote");
-            }
-
-            vote.setVoteType(VoteType.UPVOTE);
-
-            return voteRepository.save(vote);
-        }
-
-        vote = new Vote();
-        vote.setQuote(quote);
-        vote.setUser(user);
-        vote.setVoteType(VoteType.UPVOTE);
-
-        return voteRepository.save(vote);
-    }
-
-    @Override
-    public Vote downvoteQuote(Long quoteId, User user) {
-        Quote quote = quoteRepository.findById(quoteId).orElseThrow(() -> new ResourceNotFoundException("Quote not found with id " + quoteId));
-        Vote vote = voteRepository.findByQuoteAndUser(quote, user);
-        if (vote != null) {
-            if (vote.getVoteType().equals(VoteType.DOWNVOTE)) {
-                throw new BadRequestException("You have already downvoted this quote");
-            }
-
-            vote.setVoteType(VoteType.DOWNVOTE);
-
-            return voteRepository.save(vote);
-        }
-
-        vote = new Vote();
-        vote.setQuote(quote);
-        vote.setUser(user);
-        vote.setVoteType(VoteType.DOWNVOTE);
-
-        return voteRepository.save(vote);
+    public Quote downvoteQuote(Long id, VoteDTO voteDTO) {
+        Quote quote = quoteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Quote not found with id " + id));
+        int vote = voteDTO.getVote();
+        quote.setVotes(quote.getVotes() - vote);
+        return quoteRepository.save(quote);
     }
 
     @Override
