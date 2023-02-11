@@ -1,4 +1,4 @@
-package by.goncharov.kameleoonTask.exception;
+package by.goncharov.kameleoontask.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

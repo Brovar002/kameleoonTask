@@ -1,22 +1,15 @@
-package by.goncharov.kameleoonTask.controller;
+package by.goncharov.kameleoontask.controller;
 
-import by.goncharov.kameleoonTask.dto.QuoteDTO;
-import by.goncharov.kameleoonTask.dto.VoteDTO;
-import by.goncharov.kameleoonTask.entity.Quote;
-import by.goncharov.kameleoonTask.entity.Vote;
-import by.goncharov.kameleoonTask.service.QuoteService;
-import com.sun.security.auth.UserPrincipal;
+import by.goncharov.kameleoontask.dto.QuoteDTO;
+import by.goncharov.kameleoontask.dto.VoteDTO;
+import by.goncharov.kameleoontask.entity.Quote;
+import by.goncharov.kameleoontask.service.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.CurrentSecurityContext;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")

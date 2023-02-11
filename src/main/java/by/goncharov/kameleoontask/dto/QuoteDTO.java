@@ -1,4 +1,4 @@
-package by.goncharov.kameleoonTask.dto;
+package by.goncharov.kameleoontask.dto;
 
 import lombok.Data;
 

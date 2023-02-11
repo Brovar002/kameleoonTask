@@ -1,4 +1,4 @@
-package by.goncharov.kameleoonTask.entity;
+package by.goncharov.kameleoontask.entity;
 
 import lombok.*;
 

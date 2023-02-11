@@ -1,9 +1,9 @@
-package by.goncharov.kameleoonTask.service.impl;
+package by.goncharov.kameleoontask.service.impl;
 
-import by.goncharov.kameleoonTask.dto.UserDTO;
-import by.goncharov.kameleoonTask.entity.User;
-import by.goncharov.kameleoonTask.repository.UserRepository;
-import by.goncharov.kameleoonTask.service.UserService;
+import by.goncharov.kameleoontask.dto.UserDTO;
+import by.goncharov.kameleoontask.entity.User;
+import by.goncharov.kameleoontask.repository.UserRepository;
+import by.goncharov.kameleoontask.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

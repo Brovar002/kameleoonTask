@@ -1,4 +1,4 @@
-package by.goncharov.kameleoonTask;
+package by.goncharov.kameleoontask;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

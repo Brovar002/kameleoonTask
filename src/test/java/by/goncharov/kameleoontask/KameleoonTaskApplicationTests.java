@@ -1,4 +1,4 @@
-package by.goncharov.kameleoonTask;
+package by.goncharov.kameleoontask;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

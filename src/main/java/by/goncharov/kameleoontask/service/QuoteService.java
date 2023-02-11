@@ -1,10 +1,8 @@
-package by.goncharov.kameleoonTask.service;
+package by.goncharov.kameleoontask.service;
 
-import by.goncharov.kameleoonTask.dto.QuoteDTO;
-import by.goncharov.kameleoonTask.dto.VoteDTO;
-import by.goncharov.kameleoonTask.entity.Quote;
-import by.goncharov.kameleoonTask.entity.User;
-import by.goncharov.kameleoonTask.entity.Vote;
+import by.goncharov.kameleoontask.dto.QuoteDTO;
+import by.goncharov.kameleoontask.dto.VoteDTO;
+import by.goncharov.kameleoontask.entity.Quote;
 
 import java.util.List;
 

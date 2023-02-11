@@ -1,6 +1,6 @@
-package by.goncharov.kameleoonTask.repository;
+package by.goncharov.kameleoontask.repository;
 
-import by.goncharov.kameleoonTask.entity.User;
+import by.goncharov.kameleoontask.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

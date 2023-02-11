@@ -1,8 +1,8 @@
-package by.goncharov.kameleoonTask.controller;
+package by.goncharov.kameleoontask.controller;
 
-import by.goncharov.kameleoonTask.dto.UserDTO;
-import by.goncharov.kameleoonTask.entity.User;
-import by.goncharov.kameleoonTask.service.UserService;
+import by.goncharov.kameleoontask.dto.UserDTO;
+import by.goncharov.kameleoontask.entity.User;
+import by.goncharov.kameleoontask.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

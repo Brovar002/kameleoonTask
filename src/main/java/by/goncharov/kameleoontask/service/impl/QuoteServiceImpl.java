@@ -1,17 +1,13 @@
-package by.goncharov.kameleoonTask.service.impl;
+package by.goncharov.kameleoontask.service.impl;
 
-import by.goncharov.kameleoonTask.dto.QuoteDTO;
-import by.goncharov.kameleoonTask.dto.VoteDTO;
-import by.goncharov.kameleoonTask.entity.Quote;
-import by.goncharov.kameleoonTask.entity.User;
-import by.goncharov.kameleoonTask.entity.Vote;
-import by.goncharov.kameleoonTask.entity.VoteType;
-import by.goncharov.kameleoonTask.exception.BadRequestException;
-import by.goncharov.kameleoonTask.exception.ResourceNotFoundException;
-import by.goncharov.kameleoonTask.repository.QuoteRepository;
-import by.goncharov.kameleoonTask.repository.UserRepository;
-import by.goncharov.kameleoonTask.repository.VoteRepository;
-import by.goncharov.kameleoonTask.service.QuoteService;
+import by.goncharov.kameleoontask.dto.QuoteDTO;
+import by.goncharov.kameleoontask.dto.VoteDTO;
+import by.goncharov.kameleoontask.entity.Quote;
+import by.goncharov.kameleoontask.entity.User;
+import by.goncharov.kameleoontask.exception.ResourceNotFoundException;
+import by.goncharov.kameleoontask.repository.QuoteRepository;
+import by.goncharov.kameleoontask.repository.UserRepository;
+import by.goncharov.kameleoontask.service.QuoteService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,12 +17,10 @@ import java.util.List;
 public class QuoteServiceImpl implements QuoteService {
     private final QuoteRepository quoteRepository;
     private final UserRepository userRepository;
-    private final VoteRepository voteRepository;
 
-    public QuoteServiceImpl(QuoteRepository quoteRepository, UserRepository userRepository, VoteRepository voteRepository) {
+    public QuoteServiceImpl(QuoteRepository quoteRepository, UserRepository userRepository) {
         this.quoteRepository = quoteRepository;
         this.userRepository = userRepository;
-        this.voteRepository = voteRepository;
     }
 
     @Override
