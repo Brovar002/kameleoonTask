@@ -14,18 +14,19 @@ import javax.persistence.*;
 @Getter
 @Table(name = "votes")
 public class Vote {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "vote_type", nullable = false)
-    private VoteType voteType;
+    @Column(name = "upvotes")
+    private Integer upvotes;
+
+    @Column(name = "downvotes")
+    private Integer downvotes;
 
     @ManyToOne
-    @JoinColumn(name = "quote_id", referencedColumnName = "id")
+    @JoinColumn(name = "quote_id")
     private Quote quote;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
 }
