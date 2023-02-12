@@ -5,6 +5,11 @@ import by.goncharov.kameleoontask.dto.UserDTO;
 import by.goncharov.kameleoontask.entity.User;
 
 public interface UserService {
-    User createUser(UserDTO userDTO);
+    UserDTO createUser(UserDTO userDTO);
+
+    UserDTO updateUser(Long id, UserDTO userDTO);
+
+    void deleteUser(Long id);
+
     User findUserByEmail(String email);
 }
