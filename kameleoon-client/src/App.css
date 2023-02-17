@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(grey);
+}
+
+header {
+  width: 100%;
+
+  display: flex;
+}
+
+main {
+  padding: 0 10%;
+
+  height: 90%;
+}
