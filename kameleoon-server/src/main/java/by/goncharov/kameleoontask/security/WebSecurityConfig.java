@@ -31,7 +31,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/v3/api-docs/**","/swagger-ui/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/quotes/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/v1/users/**").permitAll()
-                .anyRequest().authenticated()
                 .antMatchers("/",
                         "/favicon.ico",
                         "/**/*.png",
@@ -43,6 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.js",
                         "/**/*.ts")
                 .permitAll()
+                .anyRequest().authenticated()
                 .and().addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager(), userDetailsService))
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
