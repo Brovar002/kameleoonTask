@@ -13,5 +13,5 @@
 ### Docker
 1. Go to root folder
 2. ```docker compose up```
-3. Go to http;//localhost:3000 to see front
+3. Go to http://localhost:3000 to see front
 4. Or go to http://localhost:8080/swagger-ui/ to check endpoints

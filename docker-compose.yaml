@@ -1,9 +1,27 @@
 services:
 
-  server:
+  backend:
     build:
-      context: .
-      dockerfile: ./kameleoon-server/Dockerfile
+      context: kameleoon-server
+    networks:
+      - react-spring
     ports:
       - "8080:8080"
     restart: always
+
+  frontend:
+    build:
+      context: kameleoon-client
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE_URL: http://127.0.0.1:8080/api/v1
+    ports:
+      - "9090:80" # Forward the exposed port 80 on the container to port 80 on the host machine
+    restart: always
+    networks:
+      - react-spring
+    depends_on:
+      - backend
+
+networks:
+  react-spring: {}
